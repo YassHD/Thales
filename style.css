@@ -1,0 +1,64 @@
+/* Styles par dÃ©faut
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+html {font-family: sans-serif;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #f5f5f5;}
+body {margin:0;background-color: #f5f5f5;padding:2% 0 70px 0;font-family: Arial, Helvetica, sans-serif;font-size: 14px;}
+a {background-color: transparent;}
+a:active, a:hover {outline: 0;}
+label {clear:both;display: block;padding:10px 10px 10px 10px;}
+.small {font-size: 12px;}
+.large {font-size: 20px;}
+.field {width:250px;border:1px solid #d9d9d9;border-top:1px solid #c0c0c0;color:#b0b0b0;font-size: 14px;padding:12px 12px;clear:both;margin-bottom: 20px;}
+.field:hover {border-color:#b9b9b9;border-top-color: #a0a0a0;}
+.field:focus {color:#37474f;border-color: #00bbdf;}
+.btnSubmit {width:276px;height:44px;line-height: 44px;color:#ffffff;background-color: #00bbdf;text-align: center;font-size: 18px;border-radius: 2px;border:0px;cursor:pointer;font-family: 'Open Sans Semibold', sans-serif;}
+.btnSubmitDisabled {width:276px;height:44px;background:#cdcdcd url(btnLoader.gif) no-repeat center center;border-radius: 2px;border:0px;}
+.btnSubmit:hover {background-color: #00b0ff;}
+.btnSubmit:active {background-color: #0091ea;}
+.errorMsg {width:276px;background-color: #dd4b39;color:#ffffff;font-size: 11px;text-align: center;padding:6px 0;margin-top: -10px;margin-bottom:20px;border-radius: 2px;}
+.errorField {border-color: #dd4b39;border-top-color: #bb0000;}
+
+.linkBtn {width:274px;height:44px;line-height: 44px;color:#ffffff;text-align: center;font-size: 18px;border-radius: 2px;border:0px;cursor:pointer;font-family: 'Open Sans Semibold', sans-serif;text-decoration: none;text-align: center;display: block;margin:0 auto 20px auto;}
+.linkContinue {background-color: #00bbdf;}
+.linkContinue:hover {background-color: #00b0ff;}
+.linkContinue:active {background-color: #0091ea;}
+
+.linkCancel {background-color: #ef5350;}
+.linkCancel:hover {background-color: #dc494c;}
+.linkCancel:active {background-color: #e53935;}
+
+.linkContinueGrey {background-color: #b6b6b6;}
+.linkContinueGrey:hover {background-color: #b0b0b0;}
+.linkContinueGrey:active {background-color: #a9a9a9;}
+
+/* SpÃ©cifiques aux conteneurs
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+body.preprod #authContainer {border-top:1px solid #ff6f00 !important;}
+body.preprod #accessType {background-color: #ff6f00;color:#ffffff;display: block;}
+#accessType {display: none;margin-left: 10px;padding:3px 15px;position:absolute;text-transform: uppercase;font-family: 'Open Sans Condensed', sans-serif;font-size: 12px;}
+#details {width:360px;margin:0 auto 0 auto;text-align: center;color:#78909c;clear:both;}
+#details .intro {margin-bottom:40px;padding-top: 10px;}
+
+#details.important h2 {text-transform: uppercase;margin:10px 0 2px 0;padding:6px 0;background-color: #ef5350;color:#ffffff;font-size: 14px;font-family: 'Open Sans Semibold', sans-serif;}
+#details.important p {color:#e53935;padding:0 0 16px 0;margin:16px 0 36px 0;border-bottom: 1px solid #ef5350;}
+#custommsg.important h2 {text-transform: uppercase;margin:10px 0 2px 0;padding:6px 0;background-color: #ef5350;color:#ffffff;font-size: 14px;font-family: 'Open Sans Semibold', sans-serif;}
+
+#mainContainer {width:100%;margin:0 auto;clear:both;min-width:270px;}
+#authContainer {margin:0 auto 0 auto;background-color:#ffffff;max-width:460px;border:1px solid #e2e2e2;border-top:1px solid #00bbdf;}
+#thalesTitle {font-family: 'Open Sans Light Italic', sans-serif;color:#949494;font-size: 24px;width:180px;margin:12px auto 40px auto;text-align: center;}
+#thalesTitle img {margin-top: 10px;margin-bottom: 13px;}
+#helpContainer {margin:10px auto 0 auto;background-color:#ffffff;max-width:460px;border:1px solid #e2e2e2;border-top:1px solid #7fddef;color:#78909c;font-size: 12px;}
+#helpContainer .helpContainerIn {padding:20px 40px;}
+#helpContainer h3 {font-family: 'Open Sans Semibold', sans-serif;font-size: 13px;color:#546e7a;padding:0;margin:0;}
+#helpContainer ul {list-style-type: none;padding:0;margin:18px 0;line-height: 18px;}
+#helpContainer a {color:#00b4d7;text-decoration: none;}
+#helpContainer a:hover {text-decoration: underline;}
+#formContainer {width:276px;margin:0 auto;padding:0;}
+#authMore {clear:both; border-top:1px solid #ebebeb;width:100%; height: 62px; margin-top:70px; display: inline-block;}
+#lgSelectorContainer {border-left:1px solid #ebebeb;height: 19px;padding: 22px 20px 22px 55px;clear: both;float: right;}
+#lgSelector {width:160px;padding:0 0 0 6px;}
+#lgIcon {width:20px;height:18px;margin-right: 10px;padding-top: 2px;float: left;}
+
+t-face {font-family: 'Open Sans Extrabold';font-style: normal;font-weight: 800;src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(OpenSans-Extrabold.woff) format('woff');}
+
+/* Responsive
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */

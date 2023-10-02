@@ -1,0 +1,180 @@
+
+
+<!doctype html>
+<html>
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Thales - Authentification</title>
+
+	<!--
+	Lien vers la CSS
+	Idéalement, si toutes les pages (préprod, accès Internet, etc.) pointent vers cette CSS, il faut la laisser.
+	Si par contre, toutes les pages pointent vers une CSS différentes, il serait souhaitable de l'intégrer directement
+	dans la page pour éviter des accès serveur inutiles.
+	-->
+	<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+
+</head>
+
+<!--
+Si une classe spécifique est spécifiée dans le body
+ALORS, il y aura des changements dans certains blocs.
+Exemple : changement de couleurs si " preprod "
+-->
+<body>
+
+<script language="JavaScript">
+
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+
+
+function showerror() {
+document.getElementById("errormdptgi").style.display='block';
+}
+
+ 
+</script>
+
+	<div id="mainContainer">
+		<div id="authContainer" class="mContainer">
+
+			<!--
+			Type de serveur
+			Ne s'affiche QUE sur lors d'accès spécifiques (pré-prod par exemple)
+			-->
+			<div id="accessType" style="position:relative; float:left;">Preprod</div>
+
+
+			<!--
+			<img src="" /> obligatoire pour compatiblité IE8
+			La propriété background-size n'étant pas compatible
+			-->
+			<div id="thalesTitle" alt="" title="" style="width: 100%; float: left;">
+				<img src="logoThales_2x.png" width="155px" height="25px"  />
+				<br>Authentification </br>
+			</div>
+
+			<!--
+			Formulaire de validation
+			Method : GET pour la démonstration, a replacer en POST par la suite
+			Placeholder : non supporté par IE9 d'où l'ajout de l'attribut TITLE sur les <input />
+			Autofocus : sur le champ TGI, permet d'avoir le champ sélectionné au chargement. Non compatible IE8 et IE9
+			-->
+			
+			<form id="formContainer" name="formContainer" action="sm_login.fcc?SMQUERYDATA=" METHOD="POST" onSubmit="connect(); return false;"  autocomplete="off">
+				<input type=hidden name=TARGET value="-SM-HTTPS%3A%2F%2Fsso--idp.thalesgroup.com%2Faffwebservices%2Fredirectjsp%2Fredirect_unique.jsp%3FSAMLRequest%3DfVJdT8IwFP0rTd-%2F3VXBiwyAoIZJgJDB88K10d1CytbO3A3-%2B-%2Bc4OI0ZD0pek55557Tofjz7IgR7CojE5o5IeUgJYmU3qX0E068wZ0PBqiKAtW8Unt9noFHzWgIw1RI-%2B9eElpbzY1AhVyLEpA7ydeTlwVnfsgra5yRpqBkggjWNaOejMa6BLsGe1QSNqtFQvfOVciD4HQ6-%2BUYXSoPv9qIA3FlTV740ZfAtyYLl6zqlZNqYUFq41viFi2g8lVV-%2FiCLPT7DFbhoGVb0tlAxa8w2FkpmxEtr1EpqLAoGS-%2BTShoh-%2FLgwSWx5L1syjrKRn3B-%2FdZ7xCFg-%2F5DA8KlQFRH-%2BKEh1jDX6IR2CWUh63lR6IUsjULOmsP8h-%2FjunZLlOZRHpbuwbyW47UDIn9N06XX7v11KawD0XBFvp9vrbm4Li0shdPR-%2F7MPgWnh0vv7-%2BCqMv%26RelayState%3Dhttps-%3A-%2F-%2Fwww.online.thalesgroup.com-%2Ffrontoffice-%2Fc-%2Fng-%2Fhome%26SigAlg%3Dhttp-%3A-%2F-%2Fwww.w3.org-%2F2000-%2F09-%2Fxmldsig-%23rsa--sha1%26Signature%3DHlwX5GWMNlgktlKfNFiIQCHPw5YVaBnZAGcnJZFzanprOYdOqoEaO9zV0zlXoqUKuP16gMfHjAikaVD46UIvYtYXc9GPQ2Ou0Y-%2Bpt2fgJy-%2FQnHkWZFhm8Di9ATJIfzABI-%2BVk8VSvN1q-%2FBcIYpFR2vfqnrcXbS7nOsF5BJk9x5XH0PjqS9zENpjcU3HcTlAN7XPZj5XRenFT1x66PNJexD3PJzleJsucnk4S9Np2ZT7lmaM2rjRy3nSwngwdSC-%2BRy2ixpDFkhUW0fMl8StdvvXy5M6FuKBhN3wFeB1mH5URxXISZBL-%2Fv6SwBB6dTadO6tSyubjvwd3w1UB-%2BiL987LMIFCMwUuLOM1uXlB60lbkeZ-%2F4WqjnXuvahrN-%2F9yACGz7eK1xqNuy-%2B35UohpUxoPTQQoKQbadmcbER0WCgWreMRUB2Saa5R5mftiNdQcUz2xhBJTo0GpjoYte-%2BfEJ540mGc5oiIdIPRHSsLuDzBNZfTcbqwlb2xnqQRQ5ouxqPsh5Vs1Uq5vqbjNFDpbRBfREBV9IOT1gvLEFiY3Ocfj6hrIU1dUJJhECc6hVk-%2BDzPpX-%2FdJl7nrC5EACxDYl7O05UpmRxOgTHXzDzeStxsAILryaGOShnKRhrzWVG9G-%2FfLerFwOLKc5yp0ccAXpNiPWFhHMz3IAjZdGAzz00qWoP8gYI-%3D%26SMPORTALURL%3Dhttps-%3A-%2F-%2Fsso--idp.thalesgroup.com-%2Faffwebservices-%2Fpublic-%2Fsaml2sso%26SAMLTRANSACTIONID%3D31bad281--9d1940df--d63c65cf--3e40c07e--3889deff">
+			    <input type="hidden" name="SMQUERYDATA" value="">
+			    <input type=hidden name=SMAUTHREASON value="0">
+			    <input type=hidden name=SMAGENTNAME value="-SM-0NBzFS3YLyJRwdArRu9bGfo0ORJa4RnZ+Jm8dTd4UbTRheDkf/rPyXoy0Ol7SWwQ">
+			    <input type=hidden name=POSTPRESERVATIONDATA value="">
+			    <input type=hidden name="SMENC" value="ISO-8859-1">
+			    <input type=hidden name="SMLOCALE" value="US-EN">
+			    <input type="hidden" name="PASSWORD" value="">
+			    <input type="hidden" name="lang" value="">
+						<label for="fieldTGI" alt="" title="" id="fieldTGI">Identifiant</label>
+				<input id="USER" type="text" name="USER" placeholder="Entrez votre identifiant" class="field" autocomplete="off" tabindex="1" spellcheck="false" title="Entrez votre TGI" autofocus="autofocus" size="35" />
+				<div style="clear:both;"></div>			
+				
+				<label for="fieldPassword" alt="" title="" id="labfieldPWD">Mot de passe</label>
+				<input id="fieldPassword" type="password" name="fieldPassword" placeholder="Entrez votre mot de passe " class="field" tabindex="2" title="Entrez votre mot de passe eDir"/>
+				<div class="errorMsg" id="errormdptgi" name="errormdptgi" style="display: none;">Le TGI ou le mot de passe saisi est incorrect</div>
+				<input type="submit" name="edirSubmit" id="edirSubmit" value="Connexion" class="btnSubmit" tabindex="3" alt="" title=""  onclick="javascript:connect()"/>
+			</form>
+
+			<div id="authMore">
+
+				<div id="lgSelectorContainer">
+					<!--
+					Formulaire de changement de langue
+					-->
+					<form id="formLanguage" action="" method="">
+						<!--
+						<img src="" /> obligatoire pour compatiblité IE8
+						La propriété background-size n'étant pas compatible
+						-->
+						<div id="lgIcon"><img src="icnWorld_2x.png" width="16px" height="16px" /></div>
+						
+						<script language="JavaScript">
+					        genListLang();	
+						</script>
+						</select>
+					</form>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div id="helpContainer" class="mContainer">
+			<div class="helpContainerIn">
+				<h3><span id="needhelp">Besoin d'aide ?</span></h3>
+				<ul>
+					<li><a id="forgetmdp" href="#">Vous avez oublié votre mot de passe ?</a></li>
+					<!-- <li><a id="forgettgi" href="#">Vous avez oublié votre TGI ?</a></li> -->
+					<li><a id="wantchangepwd" href="#">Vous souhaitez changer votre mot de passe ?</a></li>
+				</ul>
+				<!-- <p><span id="nohesitate">N'hésitez pas à signaler vos problèmes de connexion<br />à votre </span><a id="servdeskloc" href="#" alt="" title="">Service Desk local</a>.</p> -->
+			</div>
+		</div>
+
+	</div>
+
+<script>
+
+if (document.formContainer.USER.value == "") {
+	document.formContainer.USER.focus();
+  }
+
+var langpref = readCookie(cookie_lang_param);
+if(langpref == null)
+{
+	if("fr" != "") {
+	for(var i = 0, j = document.getElementById("lgSelector").length; i < j; ++i) {
+			if(document.getElementById("lgSelector").options[i].value == "fr") {
+			   document.getElementById("lgSelector").selectedIndex = i;
+			   break;
+			}
+		}
+	}
+} 
+else
+{
+	for(var i = 0, j = document.getElementById("lgSelector").length; i < j; ++i) {
+			if(document.getElementById("lgSelector").options[i].value == langpref) {
+			   document.getElementById("lgSelector").selectedIndex = i;
+			   break;
+			}
+	}
+}
+
+tradLibelleLinks();
+tradFormAuth();
+setpagelinks(document.getElementById("lgSelector").options[document.getElementById("lgSelector").selectedIndex].value);
+ 
+</script>
+
+</body>
+</html>
+
