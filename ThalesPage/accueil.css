@@ -1,5 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #250858; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #250858; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5; 
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: #ddd; 
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,14 +30,13 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+*/
 .container {
-
   margin: auto;
 }
 
 .navbar {
   width: 100%;
-  /* box-shadow: 0 10px 10px rgba(54, 2, 158, 0.15); */
   border-bottom: 5px solid #250858;
  
 }
@@ -29,9 +48,6 @@ body {
   height: 62px;
 }
 
-.navbar .menu-items {
-  display: flex;
-}
 
 .navbar .nav-container li {
   list-style: none;
@@ -65,6 +81,7 @@ body {
   z-index: 5;
   opacity: 0;
   cursor: pointer;
+  
 }
 
 .nav-container .hamburger-lines {
@@ -77,7 +94,7 @@ body {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between;  
 }
 
 .nav-container .hamburger-lines .line {
@@ -103,17 +120,19 @@ body {
 }
 
 .navbar .menu-items {
-  padding-top: 120px;
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-  height: 100vh;
-  width: 100%;
+  padding-top: 130px;
+  height: 140vh;
+  width: 50%;
   transform: translate(-150%);
   display: flex;
   flex-direction: column;
   margin-left: -40px;
   padding-left: 50px;
   transition: transform 0.5s ease-in-out;
-  text-align: center;
+  text-align: left;
+  backdrop-filter: blur(10px);
+  background-color: rgba(201, 198, 241, 0.5);
+  box-shadow: 0cm 0cm 0.5cm rgba(255, 255, 255, 0.5);;
 }
 
 .navbar .menu-items li {
@@ -122,17 +141,18 @@ body {
   font-weight: 500;
 }
 
-.logo {
+.logo{
   position: absolute;
   top: 5px;
-  right: 50px;
-  font-size: 1.2rem;
-  color: #250858;
+  left: 470px;
+  width: 100px;
+  z-index: -1; 
 }
 
 .nav-container input[type="checkbox"]:checked ~ .menu-items {
   transform: translateX(0);
 }
+
 
 .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
   transform: rotate(45deg);
@@ -147,7 +167,8 @@ body {
 }
 
 .nav-container input[type="checkbox"]:checked ~ .logo{
-  display: none;
+  display: block;
+
 }
 .pile {
     width: 12rem;
@@ -156,7 +177,6 @@ body {
     position: absolute;
     top: 6px;
     left: 77px;
-    
     border-radius: 50px;
     z-index: 2;
 }
@@ -170,6 +190,70 @@ body {
     border-radius: 50px;
     z-index: 2;
 }
-. {
-    margin-top: 50px;
+#imageuser{
+  width: 30px;
+  height: 30px;
+  border-radius: 90%;
+  margin-left: 7px;
+  margin-top: 8px;
+  margin-top: 9px;
+};
+
+body {
+  background-color: #f5f5f5; 
+  color: #333; 
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0; 
+  padding: 0;
 }
+
+header {
+  background-color: #250858;
+  color: #fff;
+  text-align: center; 
+  padding: 40px; 
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+.content {
+  padding: 40px;
+}
+
+.content h2 {
+  font-size: 2rem;
+  color: #250858;
+}
+
+.content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.content li {
+  margin-bottom: 10px;
+}
+
+.about-us,
+.contact {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.about-us h2,
+.contact h2 {
+  color: #250858;
+}
+
+footer {
+  background-color: #250858; 
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
