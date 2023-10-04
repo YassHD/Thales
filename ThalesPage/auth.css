@@ -60,5 +60,16 @@ body.preprod #accessType {background-color: #ff6f00;color:#ffffff;display: block
 
 t-face {font-family: 'Open Sans Extrabold';font-style: normal;font-weight: 800;src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(OpenSans-Extrabold.woff) format('woff');}
 
+.div_input {
+    position: relative;
+}
+
+.img_input {
+    position: absolute;
+    right: 10px;
+    top: calc(15%);
+    opacity: 0.5;
+}
+
 /* Responsive
 â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */

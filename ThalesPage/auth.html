@@ -59,8 +59,11 @@ Exemple : changement de couleurs si " preprod "
 				<div style="clear:both;"></div>			
 				
 				<label for="fieldPassword" alt="" title="" id="labfieldPWD">Mot de passe</label>
-				<input id="fieldPassword" type="password" name="fieldPassword" placeholder="Entrez votre mot de passe " class="field" tabindex="2" title="Entrez votre mot de passe eDir"/>
-				<div class="errorMsg" id="errormdptgi" name="errormdptgi" style="display: none;">Le TGI ou le mot de passe saisi est incorrect</div>
+				<div class="div_input"><input id="fieldPassword" type="password" name="fieldPassword" placeholder="Entrez votre mot de passe " class="field" tabindex="2" title="Entrez votre mot de passe eDir"/>
+					<span class="img_input" id="passtotext">
+						<img src="eyeon.svg" alt="eye" id="imgpass">
+					</span>
+				</div>
 				<input type="submit" name="edirSubmit" id="edirSubmit" value="Connexion" class="btnSubmit" />
 				<p id="comment" style="color: red;"><br></p>
 			</form>
@@ -83,6 +86,16 @@ Exemple : changement de couleurs si " preprod "
 						comment.innerHTML = "Identifiant ou mot de passe incorrect";
 					}
 				})
+
+				passtotext.onclick = function () {
+					if (document.getElementById("fieldPassword").type == "password") {
+						document.getElementById("fieldPassword").type = "text"
+						document.getElementById("imgpass").src = "eyeoff.svg"
+					} else {
+						document.getElementById("fieldPassword").type = "password"
+						document.getElementById("imgpass").src = "eyeon.svg"
+					}
+				}
 				
 				
 			</script>
