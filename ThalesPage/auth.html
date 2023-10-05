@@ -1,0 +1,140 @@
+
+
+<!doctype html>
+<html>
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Thales - Authentification</title>
+
+	<!--
+	Lien vers la CSS
+	Idéalement, si toutes les pages (préprod, accès Internet, etc.) pointent vers cette CSS, il faut la laisser.
+	Si par contre, toutes les pages pointent vers une CSS différentes, il serait souhaitable de l'intégrer directement
+	dans la page pour éviter des accès serveur inutiles.
+	-->
+	<link rel="stylesheet" type="text/css" href="auth.css" media="all" />
+
+</head>
+
+<!--
+Si une classe spécifique est spécifiée dans le body
+ALORS, il y aura des changements dans certains blocs.
+Exemple : changement de couleurs si " preprod "
+-->
+<body>
+
+
+
+	<div id="mainContainer">
+		<div id="authContainer" class="mContainer">
+
+			<!--
+			Type de serveur
+			Ne s'affiche QUE sur lors d'accès spécifiques (pré-prod par exemple)
+			-->
+			
+
+
+			<!--
+			<img src="" /> obligatoire pour compatiblité IE8
+			La propriété background-size n'étant pas compatible
+			-->
+			<div id="thalesTitle" alt="" title="" style="width: 100%; float: left;">
+				<img src="thales.png" width="155px" height="25px"  />
+				<br>Authentification </br>
+			</div>
+
+			<!--
+			Formulaire de validation
+			Method : GET pour la démonstration, a replacer en POST par la suite
+			Placeholder : non supporté par IE9 d'où l'ajout de l'attribut TITLE sur les <input />
+			Autofocus : sur le champ TGI, permet d'avoir le champ sélectionné au chargement. Non compatible IE8 et IE9
+			-->
+			
+			<form id="formContainer" name="formContainer">
+				<label for="fieldTGI" alt="" title="" id="fieldTGI">Identifiant</label>
+				<input id="USER" type="text" name="USER" placeholder="Entrez votre identifiant" class="field" autocomplete="off" tabindex="1" spellcheck="false" autofocus="autofocus" size="35" />
+				<div style="clear:both;"></div>			
+				
+				<label for="fieldPassword" alt="" title="" id="labfieldPWD">Mot de passe</label>
+				<div class="div_input"><input id="fieldPassword" type="password" name="fieldPassword" placeholder="Entrez votre mot de passe " class="field" tabindex="2"/>
+					<span class="img_input" id="passtotext">
+						<img src="eyeon.svg" alt="eye" id="imgpass">
+					</span>
+				</div>
+				<input type="submit" name="edirSubmit" id="edirSubmit" value="Connexion" class="btnSubmit" />
+				<p id="comment" style="color: red;"><br></p>
+			</form>
+
+			<script language="JavaScript">
+
+
+				document.getElementById("formContainer").addEventListener("submit", function (event) {
+					event.preventDefault(); // Empêche la soumission du formulaire par défaut
+				
+					var identifiant = document.getElementById("USER").value;
+					var mdp = document.getElementById("fieldPassword").value;
+					var comment = document.getElementById("comment");
+				
+					// Vérifiez les identifiants
+					if (identifiant === "JeanAdmin" && mdp === "xbifh8190") {
+						// Redirigez l'utilisateur vers la page 2 en cas de correspondance
+						window.location.href = "accueil.html";
+					} else {
+						comment.innerHTML = "Identifiant ou mot de passe incorrect";
+					}
+				})
+
+				passtotext.onclick = function () {
+					if (document.getElementById("fieldPassword").type == "password") {
+						document.getElementById("fieldPassword").type = "text"
+						document.getElementById("imgpass").src = "eyeoff.svg"
+					} else {
+						document.getElementById("fieldPassword").type = "password"
+						document.getElementById("imgpass").src = "eyeon.svg"
+					}
+				}
+				
+				
+			</script>
+
+			<div id="authMore">
+
+				<div id="lgSelectorContainer">
+					<!--
+					Formulaire de changement de langue
+					-->
+					<form id="formLanguage" action="" method="">
+						<!--
+						<img src="" /> obligatoire pour compatiblité IE8
+						La propriété background-size n'étant pas compatible
+						-->
+						<div id="lgIcon"><img src="icnWorld_2x.png" width="16px" height="16px" /></div>
+						
+						</select>
+					</form>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div id="helpContainer" class="mContainer">
+			<div class="helpContainerIn">
+				<h3><span id="needhelp">Besoin d'aide ?</span></h3>
+				<ul>
+					<li><a id="forgetmdp" href="#">Vous avez oublié votre mot de passe ?</a></li>
+					<!-- <li><a id="forgettgi" href="#">Vous avez oublié votre TGI ?</a></li> -->
+					<li><a id="wantchangepwd" href="#">Vous souhaitez changer votre mot de passe ?</a></li>
+				</ul>
+				<!-- <p><span id="nohesitate">N'hésitez pas à signaler vos problèmes de connexion<br />à votre </span><a id="servdeskloc" href="#" alt="" title="">Service Desk local</a>.</p> -->
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
+

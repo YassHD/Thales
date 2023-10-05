@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #171f69; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #171f69; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5; 
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: #ddd; 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+*/
+.container {
+  margin: auto;
+}
+
+.navbar {
+  width: 100%;
+  border-bottom: 5px solid #171f69;
+ 
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+}
+
+
+.navbar .nav-container li {
+  list-style: none;
+}
+
+.navbar .nav-container a {
+  text-decoration: none;
+  color: #0e2431;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+}
+
+.navbar .nav-container a:hover{
+    font-weight: bolder;
+}
+
+.nav-container {
+  display: block;
+  position: relative;
+  height: 60px;
+}
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+  
+}
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #0e2431;
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.navbar .menu-items {
+  padding-top: 130px;
+  height: 100vh;
+  width: 50%;
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  transition: transform 0.5s ease-in-out;
+  text-align: left;
+  backdrop-filter: blur(10px);
+  background-color: rgba(201, 198, 241, 0.5);
+  box-shadow: 0cm 0cm 0.5cm rgba(255, 255, 255, 0.5);;
+}
+
+.navbar .menu-items li {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.logo{
+  position: absolute;
+  top: 5px;
+  left: 470px;
+  width: 100px;
+  z-index: -1; 
+}
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .logo{
+  display: block;
+
+}
+.pile {
+    width: 12rem;
+    height: 3rem;
+    background-color: #171f69;
+    position: absolute;
+    top: 6px;
+    left: 77px;
+    border-radius: 50px;
+    z-index: 2;
+}
+.pile2 {
+    width: 148px;
+    height: 39px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 11px;
+    left: 117px;
+    border-radius: 50px;
+    z-index: 2;
+}
+#imageuser{
+  width: 30px;
+  height: 30px;
+  border-radius: 90%;
+  margin-left: 7px;
+  margin-top: 8px;
+  margin-top: 9px;
+};
+
+body {
+  background-color: #f5f5f5; 
+  color: #333; 
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0; 
+  padding: 0;
+}
+
+header {
+  background-color: #171f69;
+  color: #fff;
+  text-align: center; 
+  padding: 40px; 
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+.content {
+  padding: 40px;
+}
+
+.content h2 {
+  font-size: 2rem;
+  color: #171f69;
+}
+
+.content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.content li {
+  margin-bottom: 10px;
+}
+
+.about-us,
+.contact {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.about-us h2,
+.contact h2 {
+  color: #171f69;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #171f69; 
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
